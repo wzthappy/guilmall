@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.200.130:8848 # nacos地址
+      config:
+        server-addr: 192.168.200.130:8848 # nacos的配置中心地址
+        namespace: 71d24c49-86e9-4a63-8827-91919ed2cf26 # 名称空间
+
+        # 指定加载nacos中的那些配置文件    # 这个文件中配置了 对象存储OSS
+        ext-config[0].data-id: oss.yml  # 文件名
+        ext-config[0].group: DEFAULT_GROUP # 文件所属组
+        ext-config[0].refresh: true # 动态刷新
+
+        ext-config[1].data-id: third.yml  # 文件名
+        ext-config[1].group: dev # 文件所属组
+        ext-config[1].refresh: true # 动态刷新
+
+  application:
+    name: gulimall-third-party # 这个微服务的名称

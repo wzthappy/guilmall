@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.200.130:8848  # nacos注册中心地址
+      config:
+        server-addr: 192.168.200.130:8848  # nacos配置中心地址
+        namespace: 37221486-3021-45ce-a7fb-a99034fd25ba  # 命名空间
+
+        ext-config[0].data-id: search.yml # 使用nacos中这个文件
+        ext-config[0].group: dev  # 指定这个文件的组
+        ext-config[0].refresh: true # 这个配置文件支持动态刷新
+
+  application:
+    name: gulimall-search  # 服务名称

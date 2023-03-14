@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    nacos: # nacos
+      discovery:
+        server-addr: 192.168.200.130:8848
+      config:
+        server-addr: 192.168.200.130:8848
+        namespace: 32288cf3-be01-4b20-ae2e-b801446ae0f7 # 指定使用的命名空间
+
+        ext-config[0].data-id: auth.yml # 使用nacos中这个文件
+        ext-config[0].group: dev  # 指定这个文件的组
+        ext-config[0].refresh: true # 这个配置文件支持动态刷新
+
+  application:
+    name: gulimall-auth-server  # 服务名称

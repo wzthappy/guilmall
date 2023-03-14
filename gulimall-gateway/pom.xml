@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.8.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.atguigu.gulimall</groupId>
+  <artifactId>gulimall-gateway</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>gulimall-gateway</name>
+  <description>gulimall-gateway</description>
+  <properties>
+    <java.version>1.8</java.version>
+    <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+  </properties>
+  <dependencies>
+    <!-- gateway 网关 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-gateway</artifactId>
+    </dependency>
+    <!-- 导入公共模块   主要使用里面的nacos注册/发现   和  nacos的配置中心 -->
+<!--    <dependency>-->
+<!--      <groupId>com.atguigu.gulimall</groupId>-->
+<!--      <artifactId>gulimall-common</artifactId>-->
+<!--      <version>0.0.1-SNAPSHOT</version>-->
+<!--    </dependency>-->
+    <!-- 导入nacos 服务注册/发现 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+      <version>2.1.0.RELEASE</version>
+    </dependency>
+    <!-- 导入nacos 配置中心来做在 配置 管理 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+      <version>2.1.0.RELEASE</version>
+    </dependency>
+
+    <!-- 引入sentinel依赖 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+      <version>2.1.0.RELEASE</version>
+    </dependency>
+    <!-- 让网关也用上sentinel。sentinel整合gateway -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+      <version>2.1.0.RELEASE</version>
+    </dependency>
+
+    <!-- 监控功能 actuator -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+
+    <!-- zipkin可视化观察(sleuth)   里面导入了sleuth链路跟踪 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
+    </dependency>
+
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

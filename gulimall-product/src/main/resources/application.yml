@@ -1,0 +1,6 @@
+spring:
+  datasource: # 数据源   Driver的
+    username: root
+    password: 18729231365wzt
+    url: jdbc:mysql://192.168.200.130:3306/gulimall_pms?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver    # 驱动  mysql5

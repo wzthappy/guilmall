@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.atguigu.gulimall</groupId>
+  <artifactId>gulimall</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>gulimall</name>
+  <description>聚合服务</description>
+  <packaging>pom</packaging>
+
+  <modules>
+    <!-- 公共包 -->
+    <module>gulimall-common</module>
+    <!-- 网关  gateway -->
+    <module>gulimall-gateway</module>
+    <!-- 优惠价服务 -->
+    <module>gulimall-coupon</module>
+    <!-- 会员服务 -->
+    <module>gulimall-member</module>
+    <!-- 订单服务 -->
+    <module>gulimall-order</module>
+    <!-- 商品服务 -->
+    <module>gulimall-product</module>
+    <!-- 仓库服务 -->
+    <module>gulimall-ware</module>
+    <!-- 检索服务  ES -->
+    <module>gulimall-search</module>
+    <!-- 登录\注册 -->
+    <module>gulimall-auth-server</module>
+    <!-- 购物车 -->
+    <module>gulimall-cart</module>
+    <!-- 秒杀服务 -->
+    <module>gulimall-seckill</module>
+    <!-- 第三方服务  如: OOS(对象存储) -->
+    <module>gulimall-third-party</module>
+
+
+    <!-- 人人开源  后端 -->
+    <module>renren-fast</module>
+    <!-- 人人开源  代码生成器 -->
+    <module>renren-generator</module>
+
+
+    <!-- 单点登录 (测试代码) -->
+    <module>gulimall-test-sso-client</module>
+    <module>gulimall-test-sso-client2</module>
+    <!-- 单点登录的同一个登录页面 -->
+    <module>gulimall-test-sso-server</module>
+  </modules>
+</project>

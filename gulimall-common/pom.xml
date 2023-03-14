@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>gulimall</artifactId>
+    <groupId>com.atguigu.gulimall</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>gulimall-common</artifactId>
+  <description>每一个微服务公共的依赖，bean，工具类等</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+  </properties>
+
+  <dependencies>
+    <!-- 公共组件 -->
+    <!-- 导入nacos 服务注册/发现 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+
+    <!-- 导入nacos 配置中心来做在 配置 管理 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+    </dependency>
+
+    <!-- 引入sentinel依赖 -->
+    <dependency>
+      <groupId>com.alibaba.cloud</groupId>
+      <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+    </dependency>
+
+    <!-- 导入mysql驱动 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.47</version>
+    </dependency>
+
+    <!-- mybatis-plus -->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.2.0</version>
+    </dependency>
+
+    <!-- 导入servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope> <!-- 打包的时候不带上 -->
+    </dependency>
+
+    <!-- 发送http请求的工具类 -->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4.13</version>
+    </dependency>
+
+    <!-- 导入JSR303 校验注解 -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>2.0.1.Final</version>
+    </dependency>
+
+    <!--  -->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--    </dependency>-->
+    <!-- zipkin可视化观察(sleuth)   里面导入了sleuth链路跟踪 -->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--    </dependency>-->
+
+    <!-- lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+    </dependency>
+
+    <!-- 导入seata 《分布式事务》 -->
+    <!--    <dependency>-->
+    <!--      <groupId>com.alibaba.cloud</groupId>-->
+    <!--      <artifactId>spring-cloud-starter-alibaba-seata</artifactId>-->
+    <!--      <exclusions>-->
+    <!--        &lt;!&ndash; 要与seata服务端版本一直,所以把自带的替换掉 &ndash;&gt;-->
+    <!--        <exclusion>-->
+    <!--          <groupId>io.seata</groupId>-->
+    <!--          <artifactId>seata-spring-boot-starter</artifactId>-->
+    <!--        </exclusion>-->
+    <!--      </exclusions>-->
+    <!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>io.seata</groupId>-->
+    <!--      <artifactId>seata-spring-boot-starter</artifactId>-->
+    <!--      <version>1.4.2</version>-->
+    <!--    </dependency>-->
+
+    <!-- 这个包需要 -->
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>io.renren</groupId>
+      <artifactId>renren-fast</artifactId>
+      <version>3.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- 依赖管理  以后写SpringBoot-alibaba的组件，就不需要指定版本号了  -->
+  <dependencyManagement>
+    <!-- 阿里cloud -->
+    <dependencies>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+
+      <!-- springcloud -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+</project>
